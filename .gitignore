@@ -1,0 +1,31 @@
+# Ignore all Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore any virtual environment directories
+env/
+venv/
+
+# Ignore specific log files or temporary files
+*.log
+*.tmp
+*.bak
+
+# Ignore compiled files
+*.out
+*.o
+*.so
+
+# Ignore PDF files (if generated during project execution; remove if PDFs should be included)
+*.pdf
+
+# Ignore repository metadata files
+ITDataset.txt
+Repository Structure
