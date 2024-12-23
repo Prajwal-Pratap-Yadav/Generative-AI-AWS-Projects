@@ -1,72 +1,57 @@
-# Generative AI with AWS - Udacity Projects
+# Generative AI with AWS
 
-This repository contains project files, notebooks, and resources from the Udacity program **"Introduction to Generative AI with AWS"**. The projects demonstrate the practical implementation of generative AI models, focusing on fine-tuning, evaluation, and deployment using AWS services.
+## Overview
+This project demonstrates the application of generative AI using AWS services. It involves dataset preparation, model fine-tuning, and evaluation. The goal is to build a lightweight generative AI model optimized for specific tasks.
 
----
-
-## Repository Structure
-
-### 1. **Notebooks**
-- `Model_FineTuning.ipynb`:
-  - Fine-tunes the foundation model for specific domain tasks.
-  - Includes key outputs such as aspects of ubiquitous computing and model fine-tuning results.
-- `Model_Evaluation_UdacityGenAIAWS.ipynb`:
-  - Evaluates the performance of the fine-tuned model.
-  - Contains outputs related to ubiquitous computing and evaluation metrics.
-
-### 2. **Documentation**
-- **`UDACITY_Introduction_to_Generative_AI_with_AWS_Screenshots.pdf`**:
-  - Includes screenshots of fine-tuning and evaluation notebook outputs.
-  - Contains AWS S3 bucket storage verification and model deployment lifecycle.
-
----
-
-## Key Features
-
-- **Model Fine-Tuning**:
-  Learn how to adapt a large language model to domain-specific tasks using AWS.
-
-- **Model Evaluation**:
-  Understand the performance of fine-tuned models with key evaluation metrics.
-
-- **Deployment and Management**:
-  Includes steps for deploying the model on AWS and deleting endpoints after use to optimize costs.
-
----
+## Features
+- Model fine-tuning with custom datasets
+- Evaluation metrics for generative models
+- Utilization of AWS services for scalability and deployment
 
 ## Prerequisites
+- Python 3.8+
+- Jupyter Notebook
+- Required libraries: TensorFlow, PyTorch, or other relevant ML frameworks
+- AWS account and configured CLI for deployment
 
-- **AWS Account**:
-  Ensure access to AWS S3, SageMaker, and other AWS services.
-
-- **Python Libraries**:
-  Required libraries are included in the notebooks and can be installed using pip.
-
----
+## Installation
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/yourusername/GenerativeAI_AWS_Project.git
+    cd GenerativeAI_AWS_Project
+    ```
+2. Install dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
+3. Configure AWS CLI:
+    ```bash
+    aws configure
+    ```
 
 ## Usage
+### Model Fine-Tuning
+1. Open `Model_FineTuning.ipynb` in Jupyter Notebook.
+2. Follow the steps for dataset preparation and model training.
+3. Save the fine-tuned model for evaluation.
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/Generative-AI-AWS-Projects.git
-   cd Generative-AI-AWS-Projects
-   ```
+### Model Evaluation
+1. Open `Model_Evaluation_UdacityGenAIAWS.ipynb` in Jupyter Notebook.
+2. Load the fine-tuned model and evaluate its performance.
 
-2. Open the Jupyter notebooks:
-   ```bash
-   jupyter notebook
-   ```
+## Dataset
+The dataset used for this project is included as `ITDataset.txt`. Ensure you comply with any licensing requirements for its use.
 
-3. Follow the steps in the notebooks for fine-tuning and evaluation.
-
----
-
-## Acknowledgments
-
-This repository is part of the **Udacity "Introduction to Generative AI with AWS"** program. Special thanks to Udacity for the course materials and guidance.
-
----
+## Documentation
+Detailed documentation is available in the `docs/` folder:
+- `Project Documentation Report.pdf`
+- `Screenshots.pdf`
 
 ## License
+This project is licensed under the MIT License. See the `LICENSE.txt` file for details.
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+## Acknowledgments
+This project is based on the Udacity "Introduction to Generative AI with AWS" course. Special thanks to the course instructors and contributors.
+
+## Contributing
+Contributions are welcome! Feel free to open an issue or submit a pull request.
