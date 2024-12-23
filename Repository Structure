@@ -1,0 +1,20 @@
+GenerativeAI_AWS_Project/
+│
+├── index.html           # Main HTML file (optional for project documentation)
+├── README.md            # Project description (Markdown format)
+├── LICENSE              # License file (MIT License)
+├── .gitignore           # Ignore unnecessary files (e.g., virtual environments, data)
+├── assets/              # Folder for images and videos (e.g., screenshots of the project)
+│   ├── Screenshot1.png  # Example image showing model fine-tuning
+│   └── DemoVideo.mp4    # Video demo of the project or model evaluation
+├── css/                 # Optional folder for CSS files (if there is any UI for the project)
+│   └── styles.css       # Example CSS file for styling
+├── notebooks/           # Folder for Jupyter notebooks
+│   ├── Model_FineTuning.ipynb  # Notebook for model fine-tuning
+│   └── Model_Evaluation_UdacityGenAIAWS.ipynb  # Notebook for model evaluation
+├── data/                # Folder for datasets (if included)
+│   └── ITDataset.txt    # Example dataset file
+├── docs/                # Folder for additional project documentation
+│   ├── Project Documentation Report.pdf  # PDF report
+│   └── Screenshots.pdf  # PDF with additional screenshots or visual explanations
+└── requirements.txt     # Python dependencies for the project
