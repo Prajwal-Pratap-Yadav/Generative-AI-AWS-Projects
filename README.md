@@ -1,105 +1,48 @@
-# Amazon Clone
+# AWS Generative AI: Base vs Fine-Tuned Model Study
 
-Welcome to the **Amazon Clone** project! This repository contains a basic replica of Amazon's website, built using HTML and CSS. It showcases fundamental web development techniques and mimics the user interface of Amazon's homepage.
+A historical SageMaker JumpStart exercise with an offline audit of paired prompts, generation settings, and resource lifecycle calls.
 
----
+[![Checks](https://github.com/Prajwal-Pratap-Yadav/Generative-AI-AWS-Projects/actions/workflows/ci.yml/badge.svg)](https://github.com/Prajwal-Pratap-Yadav/Generative-AI-AWS-Projects/actions/workflows/ci.yml)
 
-## Table of Contents
+Start with the [review guide](docs/REVIEW_GUIDE.md), [study protocol](docs/STUDY_PROTOCOL.md), and [recorded audit](reports/notebook-audit.json).
 
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Getting Started](#getting-started)
-- [Project Structure](#project-structure)
-- [Screenshots](#screenshots)
-- [Contributing](#contributing)
-- [License](#license)
+## Study question
 
----
+How do captured responses to the same prompts differ before and after domain fine-tuning? Two preserved notebooks explore a Llama 2 7B JumpStart workflow using a short text corpus about ubiquitous computing and data management. The evidence is a small qualitative comparison, with no measured quality improvement or held-out benchmark.
 
-## Features
+| Artifact | Role |
+| --- | --- |
+| `Model_Evaluation_UdacityGenAIAWS.ipynb` | Historical base-model deployment and three saved prompt responses |
+| `Model_FineTuning.ipynb` | Historical fine-tuning workflow and three saved prompt responses |
+| `ITDataset.txt` | Existing corpus; provenance and redistribution rights unverified |
+| [awsgenai_audit.py](awsgenai_audit.py) | Static source inspection and paired-prompt comparison |
+| [tests/test_audit.py](tests/test_audit.py) | Safe parsing and comparison contracts |
 
-- **Responsive Header Navigation**:
-  - Logo placeholder.
-  - Delivery address selection.
-  - Search bar with category selection.
-  - Language selector.
-  - Sign-in section and cart icon.
+## Run the offline review
 
-- **Hero Section**:
-  - Banner message with a link to Amazon India.
+Python 3.11+ is sufficient; no AWS SDK, credentials, account, or paid resources are required:
 
-- **Shop Section**:
-  - Display of various product categories, each with a title, image, and link.
-
-- **Footer**:
-  - Links to company resources, help sections, and terms of service.
-
----
-
-## Technologies Used
-
-- **HTML5**: Semantic markup for structuring the webpage.
-- **CSS3**: For styling and layout.
-- **Font Awesome**: Icons used in the header and footer.
-
----
-
-## Getting Started
-
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/your-username/amazon-clone.git
-   ```
-
-2. **Navigate to the Project Directory**:
-   ```bash
-   cd amazon-clone
-   ```
-
-3. **Open the HTML File**:
-   Open `index.html` in your preferred browser.
-
----
-
-## Project Structure
-
-```
-Amazon Clone/
-|-- index.html
-|-- style.css
-|-- assets/
-    |-- images/ (Product and other images)
+```bash
+git clone https://github.com/Prajwal-Pratap-Yadav/Generative-AI-AWS-Projects.git
+cd Generative-AI-AWS-Projects
+python -m unittest discover -s tests -v
+python -m awsgenai_audit
 ```
 
----
+The audit parses literal payload assignments using Python's AST; it never evaluates arbitrary notebook code. It writes `reports/local/notebook-audit.json`. CI runs the same offline checks and uploads that report.
 
-## Screenshots
+## Findings
 
-_Include screenshots of the project to highlight its design and features._
+The notebooks contain **three matched prompts** after case and whitespace normalization. All three pairs share generation settings: 64 maximum new tokens, temperature 0.6, top-p 0.9, and `return_full_text=False`. Matching inputs make the saved comparison easier to inspect; stochastic outputs, three examples, and the absence of blinded ratings prevent a quality conclusion.
 
----
+Both notebooks contain deployment, endpoint cleanup, and model cleanup calls. The fine-tuning notebook also contains training calls. Presence of cleanup code does not establish that every resource was actually deleted. The recorded instance type `ml.g5.2xlarge`, SDK choices, and model identifiers describe the historical experiment, not current availability or recommendations.
 
-## Contributing
+## Cloud execution boundary
 
-Contributions are welcome! If you have suggestions or improvements, please follow these steps:
+The original notebooks can install packages, accept model terms inline, start training, and deploy billable endpoints. They are preserved historical material rather than a current one-click deployment recipe. Any future cloud reproduction needs a separately reviewed environment, explicit model-term acceptance, least-privilege access, a cost budget, and cleanup verified against actual resources. The offline audit does none of these cloud actions.
 
-1. Fork the repository.
-2. Create a new branch for your feature or bug fix:
-   ```bash
-   git checkout -b feature-name
-   ```
-3. Commit your changes:
-   ```bash
-   git commit -m "Description of changes"
-   ```
-4. Push your branch:
-   ```bash
-   git push origin feature-name
-   ```
-5. Open a Pull Request.
-
----
+The existing corpus's rights are unresolved. No derived dataset or model weights are added by this audit. Review [study limitations and next steps](docs/STUDY_PROTOCOL.md) before a new experiment.
 
 ## License
 
-This project is licensed under the MIT License. You are free to use, modify, and distribute it as per the terms of the license.
+Repository code: [MIT](LICENSE). This does not replace the model's terms or establish rights to the third-party corpus and reports.

@@ -1,0 +1,112 @@
+{
+  "scope": "Static notebook/corpus inspection; no installs, cloud requests, training or generation",
+  "notebooks": [
+    {
+      "path": "Model_Evaluation_UdacityGenAIAWS.ipynb",
+      "sha256": "37c6906034a1a9373d8a80fccdf910f6c8d538d563f1f84d7a17a3c0f52ab949",
+      "cells": 20,
+      "code_cells": 9,
+      "literal_prompts": [
+        {
+          "prompt": "outline the key aspects of ubiquitous computing from a data management perspective.",
+          "parameters": {
+            "max_new_tokens": 64,
+            "top_p": 0.9,
+            "temperature": 0.6,
+            "return_full_text": false
+          }
+        },
+        {
+          "prompt": "A second important aspect of ubiquitous computing environments is",
+          "parameters": {
+            "max_new_tokens": 64,
+            "top_p": 0.9,
+            "temperature": 0.6,
+            "return_full_text": false
+          }
+        },
+        {
+          "prompt": "Traditional approaches to data management such as",
+          "parameters": {
+            "max_new_tokens": 64,
+            "top_p": 0.9,
+            "temperature": 0.6,
+            "return_full_text": false
+          }
+        }
+      ],
+      "saved_response_cells": 3,
+      "deployment_calls": 1,
+      "training_calls": 0,
+      "contains_endpoint_cleanup": true,
+      "contains_model_cleanup": true,
+      "contains_automatic_eula_acceptance": true,
+      "instance_types": [
+        "ml.g5.2xlarge"
+      ]
+    },
+    {
+      "path": "Model_FineTuning.ipynb",
+      "sha256": "307f466b70ea14e538d8b37cf361be55dcba82205d8700e2a3aae7d0d484c955",
+      "cells": 18,
+      "code_cells": 9,
+      "literal_prompts": [
+        {
+          "prompt": "Outline the key aspects of ubiquitous computing from a data management perspective.",
+          "parameters": {
+            "max_new_tokens": 64,
+            "top_p": 0.9,
+            "temperature": 0.6,
+            "return_full_text": false
+          }
+        },
+        {
+          "prompt": "A second important aspect of ubiquitous computing environments is",
+          "parameters": {
+            "max_new_tokens": 64,
+            "top_p": 0.9,
+            "temperature": 0.6,
+            "return_full_text": false
+          }
+        },
+        {
+          "prompt": "Traditional approaches to data management such as",
+          "parameters": {
+            "max_new_tokens": 64,
+            "top_p": 0.9,
+            "temperature": 0.6,
+            "return_full_text": false
+          }
+        }
+      ],
+      "saved_response_cells": 3,
+      "deployment_calls": 1,
+      "training_calls": 2,
+      "contains_endpoint_cleanup": true,
+      "contains_model_cleanup": true,
+      "contains_automatic_eula_acceptance": true,
+      "instance_types": [
+        "ml.g5.2xlarge"
+      ]
+    }
+  ],
+  "comparison": {
+    "matched_prompts": 3,
+    "unpaired_base": [],
+    "unpaired_finetuned": [],
+    "all_matched_generation_parameters_equal": true,
+    "interpretation": "Matching prompt/settings pairs establish comparability only; no quality improvement is measured."
+  },
+  "corpus": {
+    "path": "ITDataset.txt",
+    "bytes": 22866,
+    "sha256": "97d4280e94c4b0d9962ce3fbc4b2dd067ba74bd70d2566462b018e2e8f6170b0",
+    "words": 3455,
+    "redistribution_rights_verified": false
+  },
+  "limits": [
+    "Three saved prompt pairs are not a blinded evaluation or a statistical benchmark.",
+    "Cloud instance names and SDK commands are historical notebook settings, not current recommendations.",
+    "Review model/data terms and explicit resource cleanup before any separately authorized cloud run."
+  ]
+}
