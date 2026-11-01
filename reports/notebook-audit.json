@@ -1,4 +1,5 @@
 {
+  "schema_version": 2,
   "scope": "Static notebook/corpus inspection; no installs, cloud requests, training or generation",
   "notebooks": [
     {
@@ -14,7 +15,9 @@
             "top_p": 0.9,
             "temperature": 0.6,
             "return_full_text": false
-          }
+          },
+          "cell_index": 14,
+          "line": 1
         },
         {
           "prompt": "A second important aspect of ubiquitous computing environments is",
@@ -23,7 +26,9 @@
             "top_p": 0.9,
             "temperature": 0.6,
             "return_full_text": false
-          }
+          },
+          "cell_index": 15,
+          "line": 1
         },
         {
           "prompt": "Traditional approaches to data management such as",
@@ -32,7 +37,9 @@
             "top_p": 0.9,
             "temperature": 0.6,
             "return_full_text": false
-          }
+          },
+          "cell_index": 16,
+          "line": 1
         }
       ],
       "saved_response_cells": 3,
@@ -43,7 +50,13 @@
       "contains_automatic_eula_acceptance": true,
       "instance_types": [
         "ml.g5.2xlarge"
-      ]
+      ],
+      "unparsed_code_cells": [
+        3
+      ],
+      "skipped_payloads": [],
+      "call_count_scope": "AST call sites in parseable cells; not execution counts",
+      "prompt_scope": "Top-level literal payload assignments only; no code execution or control-flow inference"
     },
     {
       "path": "Model_FineTuning.ipynb",
@@ -58,7 +71,9 @@
             "top_p": 0.9,
             "temperature": 0.6,
             "return_full_text": false
-          }
+          },
+          "cell_index": 13,
+          "line": 1
         },
         {
           "prompt": "A second important aspect of ubiquitous computing environments is",
@@ -67,7 +82,9 @@
             "top_p": 0.9,
             "temperature": 0.6,
             "return_full_text": false
-          }
+          },
+          "cell_index": 14,
+          "line": 1
         },
         {
           "prompt": "Traditional approaches to data management such as",
@@ -76,25 +93,36 @@
             "top_p": 0.9,
             "temperature": 0.6,
             "return_full_text": false
-          }
+          },
+          "cell_index": 15,
+          "line": 1
         }
       ],
       "saved_response_cells": 3,
       "deployment_calls": 1,
-      "training_calls": 2,
+      "training_calls": 1,
       "contains_endpoint_cleanup": true,
       "contains_model_cleanup": true,
       "contains_automatic_eula_acceptance": true,
       "instance_types": [
         "ml.g5.2xlarge"
-      ]
+      ],
+      "unparsed_code_cells": [
+        2
+      ],
+      "skipped_payloads": [],
+      "call_count_scope": "AST call sites in parseable cells; not execution counts",
+      "prompt_scope": "Top-level literal payload assignments only; no code execution or control-flow inference"
     }
   ],
   "comparison": {
+    "pairing_status": "matched",
     "matched_prompts": 3,
     "unpaired_base": [],
     "unpaired_finetuned": [],
     "all_matched_generation_parameters_equal": true,
+    "all_matched_parameters_explicit": true,
+    "all_matched_prompt_bytes_equal": false,
     "interpretation": "Matching prompt/settings pairs establish comparability only; no quality improvement is measured."
   },
   "corpus": {
@@ -105,8 +133,10 @@
     "redistribution_rights_verified": false
   },
   "limits": [
-    "Three saved prompt pairs are not a blinded evaluation or a statistical benchmark.",
-    "Cloud instance names and SDK commands are historical notebook settings, not current recommendations.",
-    "Review model/data terms and explicit resource cleanup before any separately authorized cloud run."
+    "Saved responses are historical; this is not a blinded quality benchmark.",
+    "Call-site counts exclude comments and strings, and do not prove execution or successful cleanup.",
+    "Unparseable cells and unsupported payloads are reported explicitly.",
+    "Cloud instance names and SDK commands are historical settings, not current recommendations.",
+    "Review model/data terms and explicit cleanup before any separately authorized cloud run."
   ]
 }
