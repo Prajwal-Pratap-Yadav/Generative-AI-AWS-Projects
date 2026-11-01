@@ -2,6 +2,8 @@
 
 Inspect a historical cloud experiment safely through static parsing and a paired-prompt comparability audit.
 
+See the [current evaluation contract](AUDIT_CONTRACT.md) for the latest checks and evidence boundaries.
+
 ## Follow the implementation
 
 | Start here | File | What to inspect |

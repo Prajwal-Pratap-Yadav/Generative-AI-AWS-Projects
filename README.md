@@ -31,6 +31,8 @@ python -m awsgenai_audit
 
 The audit parses literal payload assignments using Python's AST; it never evaluates arbitrary notebook code. It writes `reports/local/notebook-audit.json`. CI runs the same offline checks and uploads that report.
 
+The [audit contract](docs/AUDIT_CONTRACT.md) distinguishes real AST call sites from commented examples, exposes unsupported cells/payloads, and makes incomplete prompt pairing fail CI.
+
 ## Findings
 
 The notebooks contain **three matched prompts** after case and whitespace normalization. All three pairs share generation settings: 64 maximum new tokens, temperature 0.6, top-p 0.9, and `return_full_text=False`. Matching inputs make the saved comparison easier to inspect; stochastic outputs, three examples, and the absence of blinded ratings prevent a quality conclusion.
